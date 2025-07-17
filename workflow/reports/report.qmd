@@ -1,5 +1,7 @@
 ---
-title: "Report"
+title: "Penguin Report"
+author: "Jonathan Jayes"
+date: today
 format:
   html:
     code-fold: true
@@ -14,6 +16,7 @@ execute:
 Display the results of the penguin workflow.
 
 ```{r}
+# Load necessary libraries
 library(tidyverse)
 library(here)
 library(palmerpenguins)

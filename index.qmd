@@ -1,6 +1,15 @@
 ---
-title: "Presentation"
-format: revealjs
+title: "Penguin Presentation"
+format: 
+  revealjs:
+    embed-resources: true
+author: "Jonathan Jayes"
+date: 2025-07-17
+title-slide-attributes:
+  data-background-image: "assets/preview.png"
+  data-background-position: "bottom 10"
+  data-background-size: "70%"
+  data-background-opacity: "0.4"
 ---
 
 ## Purpose
