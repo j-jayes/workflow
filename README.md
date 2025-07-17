@@ -5,4 +5,4 @@
 - install `uv` with pip
 - uv pip install cookiecutter-data-science
 - uv pip install ipykernel
-- create
+- create data prep file
