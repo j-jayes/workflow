@@ -1,0 +1,38 @@
+---
+title: "Prep data"
+format: html
+---
+
+## Purpose
+
+Preparing the data for the penguin scraper workflow.
+
+## Read in the data from the penguins dataset
+
+```{r}
+library(tidyverse)
+library(here)
+library(palmerpenguins)
+data(penguins)
+penguins
+
+# Save the penguins dataset to a RDS file in the data/raw directory
+write_rds(penguins, here("workflow", "data", "raw", "penguins.rds"))
+```
+
+
+## Filter out one species
+We will filter out the "Chinstrap" species from the dataset and save the filtered data
+
+```{r}
+# Load the penguins dataset from the RDS file
+penguins <- read_rds(here("workflow", "data", "raw", "penguins.rds"))
+
+penguins %>% count(species)
+
+penguins_filtered <- penguins %>%
+    filter(species != "Chinstrap")
+
+penguins_filtered %>%
+    write_rds(here("workflow", "data", "processed", "penguins_filtered.rds"))
+```

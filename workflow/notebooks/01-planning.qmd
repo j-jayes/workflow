@@ -11,8 +11,6 @@ Planning the demo workflow for a typical project.
 library(tidyverse)
 library(here)
 library(palmerpenguins)
-
-
 ```
 
 
