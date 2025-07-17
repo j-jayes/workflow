@@ -1,0 +1,27 @@
+---
+title: "Planning"
+format: html
+---
+
+## Purpose
+
+Planning the demo workflow for a typical project.
+
+```{r}
+library(tidyverse)
+library(here)
+library(palmerpenguins)
+
+
+```
+
+
+## Data
+
+[Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/) is used for this demo.
+
+```{r}
+data(penguins)
+penguins
+```
+
