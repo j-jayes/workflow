@@ -1,7 +1,9 @@
 ---
-title: "Penguin Report"
 author: "Jonathan Jayes"
 date: today
+
+# Format for report
+title: "Penguin Report"
 format:
   html:
     code-fold: true
@@ -9,6 +11,12 @@ format:
 execute: 
   message: false
   warning: false
+
+# Format for revealjs presentation
+# title: "Penguin Presentation"
+# format: 
+#   revealjs:
+#     embed-resources: true
 ---
 
 ## Purpose
@@ -68,6 +76,7 @@ penguins_filtered_summary %>%
 ```
 
 
+
 ## Visualizing the Filtered Data
 
 ```{r}
@@ -75,6 +84,7 @@ penguins_filtered_summary %>%
 penguins_filtered %>%
     ggplot(aes(x = species, y = body_mass_g, fill = species)) +
     geom_boxplot() +
+    scale_fill_brewer(palette = "Set1") +
     labs(
         title = "Body Mass Distribution by Penguin Species",
         x = "Penguin Species",
@@ -82,4 +92,23 @@ penguins_filtered %>%
     ) +
     theme_minimal() +
     theme(legend.position = "none")
+```
+
+
+## Plot of bill length vs flipper length
+
+```{r}
+# Plot bill length vs flipper length
+penguins_filtered %>%
+    ggplot(aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE) +
+    scale_color_brewer(palette = "Set1") +
+    labs(
+        title = "Bill Length vs Flipper Length by Penguin Species",
+        x = "Bill Length (mm)",
+        y = "Flipper Length (mm)"
+    ) +
+    theme_minimal() +
+    theme(legend.position = "bottom")
 ```
